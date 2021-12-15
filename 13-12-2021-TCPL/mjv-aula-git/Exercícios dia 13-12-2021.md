@@ -33,11 +33,5 @@ Dentro de  `C:\estudo\aula-git `crie um arquivo [seu_nome].txt e informe os dado
 O arquivo sem nome com a extensão **.gitignore** é um descritor de documentos, extensões e diretórios que não serão sincronizados ao repositório remoto.
 
 1 // Git Bash - criando o arquivo .gitignore
-
-2
-
-3 cd c:\estudo\aula-git
-
-4
-
-5 touch .gitignore
+2 cd c:\estudo\aula-git
+3 touch .gitignore
