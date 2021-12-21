@@ -1,0 +1,116 @@
+**Evolução da plataforma**
+
+Exercício
+1. Pesquise e faça um resumo sobre plataforma do Java.
+2. Pesquise e faça um resumo sobre a evolução da linguagem Java.
+
+PLATAFORMA JAVA
+
+A plataforma Java é composta atualmente por quatro edições para segmentos específicos de aplicações: Java EE, Java SE, Java ME e JavaFX, e uma característica marcante de todas elas é a contribuição contínua dos usuários, que auxiliam na evolução das plataformas e em sua divulgação. 
+Desde que haja um interpretador Java instalado qualquer sistema operacional ou hardware pode rodar o Java, o fato de ser multiplataforma é uma de suas vantagens.
+Uma Java Virtual Mahchine converte os bytecodes para linguagem de máquina, permitindo seu entendimento. 
+Um pouco sobre e cada aplicação:
+- A Java EE, ou Java Platform, Enterprise Edition, é a plataforma que disponibiliza recursos para o desenvolvimento de aplicações corporativas voltadas para web e servidores de aplicação. Java EE foi projetada para suportar sistemas de uso em larga escala, ou seja, para uma quantidade significativa de usuários, possibilitando o desenvolvimento de aplicações escaláveis, robustas e multicamadas;
+- A Java SE (Java Platform, Standard Edition) é a plataforma de programação voltada para criação de applets e desenvolvimento de softwares para desktop, destinados a computadores pessoais, notebooks ou outras arquiteturas com maior capacidade de processamento e memória. Os aplicativos podem ser executados em Windows, Mac OS, Linux, Solaris ou outros sistemas operacionais, contanto que estes tenham instalado o ambiente de execução JRE (Java Runtime Environment);
+- JavaFX é uma plataforma projetada para oferecer um rico conjunto de APIs que simplificam o desenvolvimento de softwares que utilizam conteúdo de multimídia. Para que isso seja possível, são utilizados avançados engines de mídia e gráficos de aceleração por hardware. Essa tecnologia provê uma nova e moderna coleção de controles de interface com o usuário, tornando-se uma ótima opção para o desenvolvimento RIA com Java. As aplicações RIA (Rich Internet Applications) podem ser acessadas de qualquer computador que esteja conectado a internet. O termo RIA é usado para descrever Aplicações Ricas para Internet, que são executadas em ambiente web, mas que possuem características similares a softwares desenvolvidos para execução em ambiente desktop
+
+
+EVOLUÇÃO DO JAVA
+
+JDK Beta: 1995
+JDK 1.0 (Janeiro de 1996) - Esta é a primeira versão estável;
+JDK 1.1 (Fevereiro de 1997) - Nesta versão, muitos novos elementos de biblioteca foram adicionados, redefiniu a forma de tratamento de eventos e reconfigurou a maioria das bibliotecas de 1.0 e descontinuou alguns recursos definidos por 1.0. Adicionada classe interna, JavaBeans, JDBC, RMI, compilador JIT (Just In time);
+J2SE 1.2 (Dezembro 1998) - Adicionado suporte para muitos recursos, como Swing e Collection Framework. Os métodos suspend (), resume () e stop () da classe Thread foram descontinuados;
+J2SE 1.3 (Maio de 2000) - Uma melhoria muito pequena, pois apenas melhorou o ambiente de desenvolvimento;
+J2SE 1.4 (Fevereiro de 2002) - Ele adicionou algumas atualizações, como a nova palavra-chave assert , exceção encadeada e um subsistema de E / S baseado em canal. Também adicionou algum recurso para a estrutura de coleção e as classes de rede;
+J2SE 5.0 (Setembro de 2004) - Os novos recursos significativos adicionados a esta versão são - Genéricos, Anotação, Autoboxing e Auto-unboxing, Enumeração, para cada, argumento de comprimento variável, importação estática, E / S formatado, utilitários de simultaneidade;
+Java SE 6 (Dezembro de 2006) - Nesta versão as bibliotecas de API e vários novos pacotes foram aprimorados e ofereceram melhorias no tempo de execução. Suporta JDBC 4.0;
+Java SE 7 (Julho de 2011) - Adicionado suporte JVM para linguagem dinâmica, String no switch, gerenciamento automático de recursos na instrução try, suporte para sublinhado em inteiros, literais inteiros binários etc ...;
+Java SE 8 (Março 2014) - Adicionado API de data e hora, anotação de repetição, JavaFX;
+Java SE 9 (Setembro 2017) - Adicionada atualização do sistema do módulo da plataforma Java, jshell, catálogo XML, jlink e o JavaDB foi removido do JDK;
+Java SE 10 (Março de 2018) - Os recursos adicionados são interface de tipo de variável local, compartilhamento de dados de classe de aplicativo, interface do coletor de lixo, etc ...;
+Java SE 11 (Setembro de 2018) -	Recurso adicionado: Carregador de arquivo de classe dinâmica, cliente HTTP e segurança da camada de transporte. Os módulos 
+JavaFX, Java EE e CORBA foram removidos do JDK;
+Java SE 12 (Março de 2019) - Adicionado Microbenchmark Suite, JVM Constant API, One AArch64 Port, Default CDS Archives etc;
+
+Referências:
+DEVMEDIA. Introdução às plataformas Java. Disponível em: https://www.devmedia.com.br/introducao-as-plataformas-java/29544. Acesso em: 20 dez. 2021.
+TUTORIAL AND EXAMPLE. History and evolution of Java. Disponível em: https://www.tutorialandexample.com/history-and-evolution-of-java/. Acesso em: 20 dez. 2021.
+
+__________________________________________________________________
+
+Exercício
+
+**CÓDIGO PROPOSTO**
+programa {
+funcao inicio() {
+        real saldoAtual = 10
+        real valorSolicitado = 0
+        
+        escreva("informe o valor desejado \n")
+        
+        leia(valorSolicitado)
+        
+        se(valorSolicitado > saldoAtual){
+            
+            escreva("saldo insuficiente!")
+        
+        }senao{
+        
+            saldoAtual = saldoAtual - valorSolicitado
+            escreva("saque realizado com sucesso!")        
+        }
+          escreva("Seu novo saldo é ", saldoAtual)
+}
+}
+
+Considerando o exemplo apresentado acima, acrescente no algoritmo a seguinte regra:
+1. Criar uma variável que represente o dado saldo cheque especial com valor atual de 20
+2. Verificar se na tentativa do saque se o valor solicitado for maior que o saldo atual exibir a seguinte mensagem: "Saldo insuficiente! Deseja usar o cheque especial?"
+3. Se a resposta for "S" fazer a regra que valide o valor solicitado comparando com valor atual + valor saldo especial
+
+
+
+
+**RESOLUÇÃO**
+programa {
+funcao inicio() {
+        real saldoAtual = 10
+        real valorSolicitado = 0
+        real saldoChequeEspecial = 20
+        
+        escreva("informe o valor desejado \n")
+        
+        leia(valorSolicitado)
+        
+        se(valorSolicitado > saldoAtual){
+            
+            escreva("Saldo insuficiente! Deseja usar o cheque especial? (S/N)")
+            
+			caracter decisaoCliente = 'N'
+			
+            leia(decisaoCliente)  
+            
+            se(decisaoCliente == 'S') {
+            	
+            	saldoChequeEspecial = saldoChequeEspecial + saldoAtual - valorSolicitado
+            	
+            	saldoAtual = 0
+            	
+            	escreva("Saque realizado com sucesso! \n")
+            }
+        
+        }senao{
+        	
+        	saldoAtual = saldoAtual - valorSolicitado
+        	
+        	escreva("Saque realizado com sucesso \n")
+        }
+        
+        escreva("Seu novo saldo é ", saldoAtual, "\n")
+        
+        escreva("Seu novo saldo do cheque especial é", saldoChequeEspecial, " \n")
+
+}
+}
+__________________________________________________________________
