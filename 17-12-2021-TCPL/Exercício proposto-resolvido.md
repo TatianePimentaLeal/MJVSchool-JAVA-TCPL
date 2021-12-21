@@ -1,4 +1,4 @@
-Exercício
+### Exercício Proposto
 
 1. Declare de forma legível variáveis que representam seus dados pessoais como: nome, cpf, idade, altura, doador orgao, email, telefone e data de nascimento.
 
@@ -16,7 +16,7 @@ UNICAMP. Construtores. Disponível em: https://www.dca.fee.unicamp.br/cursos/Poo
 
 **Dentro do Eclipse:** clicar com o botão direito sobre a classe no Package Explorer > Source > Generate Constructor Using Fields (utilizamos o “...Using Fields” porque já tínhamos as variáveis desejadas)
 
-![](C:\estudos\curso-MJVSchool-JAVA-TCPL\17-12-2021-TCPL\EclipseUm.png)
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/main/17-12-2021-TCPL/EclipseUm.png)
 
 
 
@@ -24,11 +24,11 @@ Assim, a janela de Contructor se abre e podemos selecionar os campos (variáveis
 
 O grupo segui com o access modifier de public e vamos escrever **private na frente das variáveis à mão mesmo, como comentado da aula (rever no vídeo da aula 4, parte 1)** vide o design patter Singleton que garante a existência de apenas uma instancia de uma classe, mantendo um ponto global de acesso ao seu objeto.
 
-![](C:\estudos\curso-MJVSchool-JAVA-TCPL\17-12-2021-TCPL\EclipseDois.png)
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/main/17-12-2021-TCPL/EclipseDois.png)
 
 Agora foi:
 
-![](C:\estudos\curso-MJVSchool-JAVA-TCPL\17-12-2021-TCPL\EclipseTres.png)
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/main/17-12-2021-TCPL/EclipseTres.png)
 
 Ver como referência: WIKIPEDIA. Singleton. Disponível em: https://pt.wikipedia.org/wiki/Singleton#Em_Java. Acesso em: 20 dez. 2021.
 
@@ -42,11 +42,11 @@ Ver referência: VIVA O LINUX. Entendendo os getters e setters em Java. Disponí
 
 Depois demos um “Generate to String” no Source para podermos para podermos visualizar no system.out, o objeto Aluno
 
-![](C:\estudos\curso-MJVSchool-JAVA-TCPL\17-12-2021-TCPL\EclipseQuatro.png)
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/main/17-12-2021-TCPL/EclipseQuatro.png)
 
 Mantivemos só o “Fields” e como após o ultimo item:
 
-![](C:\estudos\curso-MJVSchool-JAVA-TCPL\17-12-2021-TCPL\Eclipsecinco.png)
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/main/17-12-2021-TCPL/Eclipsecinco.png)
 
 
 
