@@ -1,4 +1,4 @@
-### Exercício Proposto
+:bookmark_tabs: ### Exercício Proposto
 
 1. Declare de forma legível variáveis que representam seus dados pessoais como: nome, cpf, idade, altura, doador orgao, email, telefone e data de nascimento.
 
@@ -6,7 +6,7 @@
 
    
 
-### Exercício resolvido
+:blue_book: ### Exercício resolvido
 
 No grupo 2 utilizamos “construtores” ou constructors do Eclipe e Intellij para agilizar a criação de um objeto na classe aluno com os dados requeridos no exercício.
 
