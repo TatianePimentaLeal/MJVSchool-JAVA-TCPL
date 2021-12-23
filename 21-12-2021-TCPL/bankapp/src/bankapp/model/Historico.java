@@ -5,8 +5,11 @@ public class Historico {
 	private Double valor;
 	private String tipoOperacao;
 	
+	public Historico() {
+		
+	}
+	
 	public Historico(String data, Double valor, String tipoOperacao) {
-		super();
 		this.data = data;
 		this.valor = valor;
 		this.tipoOperacao = tipoOperacao;
@@ -14,21 +17,18 @@ public class Historico {
 	public String getData() {
 		return data;
 	}
-	public void setData(String data) {
-		this.data = data;
-	}
 	public Double getValor() {
 		return valor;
-	}
-	public void setValor(Double valor) {
-		this.valor = valor;
 	}
 	public String getTipoOperacao() {
 		return tipoOperacao;
 	}
-	public void setTipoOperacao(String tipoOperacao) {
-		this.tipoOperacao = tipoOperacao;
-	}
+	
+	
+	
+	//20/12/21-SAQUE-100
+	//20/12/21-DEPOSITO-50
+	//20/12/21-TRANSFERENCIA-30
 	
 	
 }
