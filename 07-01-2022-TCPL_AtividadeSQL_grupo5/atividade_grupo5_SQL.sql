@@ -101,6 +101,38 @@ update tab_ficha_profissional
 set logradouro = 'PRACA DA SE', numero = 'S/N', bairro = 'CENTRO', cidade = 'SAO PAULO', estado = 'SP'
 where id = 3;
 
+-- Retornando uma lista contendo os campos: Nome, Email, Profissao e Faixa Salarial ordenado por Profissão, Nome
+select nome,email,profissao,salario_minimo,salario_maximo 
+from tab_ficha_profissional
+order by profissao, nome;
 
+-- Retornando uma lista contendo os campos: Nome, Email, Profissao e Faixa Salarial ordenado por Profissão, Salario Máximo do maior para o menor
+select nome,email,profissao,salario_minimo,salario_maximo 
+from tab_ficha_profissional
+order by profissao, salario_maximo desc;
 
+-- Retornando uma lista com a seguinte informação concatenada e apelidada de nome_profissao: NOME + ' - ' + PROFISSAO
+select concat(nome,' - ',profissao) as nome_profissao
+from tab_ficha_profissional;
 
+-- Retornando uma lista contendo o nome da profissão e a quantidade de registros da profissão
+select profissao, count(profissao)
+from tab_ficha_profissional
+group by profissao;
+
+-- Retornando o registro com menor salário mínimo;
+select * from tab_ficha_profissional
+where salario_minimo = (select min(salario_minimo) from tab_ficha_profissional);
+
+-- Retornando se existir o registro com a seguinte condição: Nome parecido com 'MARCOS PAULO' e Salario Maximo maior que 1200 e Salario Maximo menor ou igual que 2000 e que o Estado esteja entre SP, RJ, SC.
+select *
+from tab_ficha_profissional
+where nome like 'MARCOS PAULO'and  
+salario_maximo > 1200 and
+salario_maximo <= 2000 and
+estado in ('SP','RJ','SC');
+
+-- Inserindo dados para testar o select anterior
+insert into tab_ficha_profissional 
+values
+(default,'MARCOS PAULO','marcosp@GMAIL.COM','11912345678','RUA TRES',22,'AZKABAN','SÃO PAULO','SP','DESENVOLVEDOR',1500.00,1900.00,'BRASILEIRO');
