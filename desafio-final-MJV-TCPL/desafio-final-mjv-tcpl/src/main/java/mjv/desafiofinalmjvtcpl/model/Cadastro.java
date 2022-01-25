@@ -11,10 +11,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "tab_cadastro")
@@ -29,13 +28,11 @@ public class Cadastro {
 	@Column(nullable = false, length = 20)
 	private String cpf;
 		
-	@JsonFormat(pattern= "dd-MM-yyyy")
+	@DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
 	private LocalDate dataNascimento;
 	
-	@JoinColumn
 	private String telefone;
 	
-	@JoinColumn
 	private String profissao;
 		
 	@Enumerated

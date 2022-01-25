@@ -1,37 +1,38 @@
 package mjv.desafiofinalmjvtcpl.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import mjv.desafiofinalmjvtcpl.model.Cadastro;
 import mjv.desafiofinalmjvtcpl.repository.CadastroRepository;
 
-@RestController
-@RequestMapping({"/cadastros"})
+@Controller
+//removido RestController por não estar criando uma API
 public class CadastroController {
 	
 	@Autowired
 	private CadastroRepository repository;
 	
-	CadastroController(CadastroRepository cadastroRepository) {
-		this.repository = cadastroRepository;
+	@GetMapping() 
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView("index");
+		mv.addObject("cadastros", repository.findAll());
+		return mv;
 	}
 	
-	@GetMapping
-	public List<Cadastro> getCadastro() {
-		return repository.findAll();
+	@GetMapping(value = "/home") 
+	public ModelAndView home() {
+		return index();
 	}
 	
-	@GetMapping("/membros")
-	public String cadastros(Model model) {
-		model.addAttribute("listarMembros", repository.findAll());
-		return "/membros/index";
+	@PostMapping("/grava")
+	public ModelAndView salvar(@Validated Cadastro cadastro) {
+		repository.save(cadastro);
+		return new ModelAndView("redirect:/home");
 	}
-	
 }
 	

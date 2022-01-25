@@ -251,19 +251,23 @@
                     <h3 class="section-subheading text-muted">Conheça quem já se juntou à nós.</h3>
                 </div>
                 <div class="row">
+                <th:block th:each="c : ${cadastros}">
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4>Nome</h4>
-                            <p class="text-muted">Profissao</p>
-                            <p class="text-muted">CPF</p>
-                            <p class="text-muted">Data de Nascimento</p>
-                            <p class="text-muted">Profissão</p>
-                            <p class="text-muted">Escolaridade</p>
-                            <p class="text-muted">Endereço</p>
-                            
+                            <img class="mx-auto rounded-circle" src="assets/img/team/girl.jpg" alt="..." />
+                            <h4 th:text = "${c.nome}">Nome</h4>
+                            <p class="text-muted" th:text = "${c.profissao}">Profissão</p>
+                            <p class="text-muted" th:text = "${c.cpf}">CPF</p>
+                            <!-- <p class="text-muted">Data de Nascimento</p>-->
+                            <!-- <p class="text-muted" th:text = "${c.telefone}">Telefone</p>-->
+                            <!-- <p class="text-muted" th:text = "${c.escolaridade}">Escolaridade</p>-->
+                            <!-- <p class="text-muted">Endereço</p>-->
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>                           
                         </div>
                     </div>
+                    </th:block>
                 </div>
         </section>
         <!-- Clients-->
@@ -299,24 +303,24 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" action="/grava" method="POST" th:object="${cadastro}" data-sb-form-api-token="API_TOKEN">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Nome completo" data-sb-validations="required" />
+                                <input class="form-control" id="name" name="nome" type="text" placeholder="Nome completo" data-sb-validations="required" />
                             </div>
                             <div class="form-group">
                                 <!-- CPF number input-->
-                                <input class="form-control" id="cpf" type="text" min="11" placeholder="CPF (XXX.XXX.XXX-XX)" data-sb-validations="required,email" />
+                                <input class="form-control" id="cpf" name="cpf" type="text" min="11" placeholder="CPF (XXX.XXX.XXX-XX)" data-sb-validations="required" />
                             </div>
                             <div class="form-group">
                                 <!-- Birthday input-->
-                                <input class="form-control" id="birthday" type="date" placeholder="Data de Nascimento" data-sb-validations="required,email" />
+                                <input class="form-control" id="birthday" placeholder="Data de Nascimento" data-sb-validations="required" />
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Telefone de contato (DDD XXXXX-XXXX)" data-sb-validations="required" />
+                                <input class="form-control" id="phone"type="tel" name="telefone" placeholder="Telefone de contato (DDD XXXXX-XXXX)" data-sb-validations="required" />
 
                             </div>
                         </div>
@@ -324,11 +328,11 @@
                             <div class="form-group form-group-textarea mb-md-0">
                                 <div class="form-group">
                                     <!-- Profession input-->
-                                    <input class="form-control" id="profession" type="text" placeholder="Profissão" data-sb-validations="required" />
+                                    <input class="form-control" id="profession" name="profissao" type="text" placeholder="Profissão" data-sb-validations="required" />
                                 </div>
                                 <div class="form-group">
                                     <!-- Graduation input-->
-                                    <input class="form-control" id="graduation" type="text" placeholder="Escolaridade" data-sb-validations="required" />
+                                    <input class="form-control" id="graduation" name="escolaridade" type="text" placeholder="Escolaridade" data-sb-validations="required" />
                                 </div>
                                 <div class="form-group">
                                     <!-- Address input-->
