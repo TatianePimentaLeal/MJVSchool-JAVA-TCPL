@@ -26,5 +26,7 @@ public class CadastroController {
 		return repository.findAll();
 	}
 	
+	
+	
 }
 	

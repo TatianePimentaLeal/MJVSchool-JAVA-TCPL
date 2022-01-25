@@ -2,6 +2,8 @@ package mjv.desafiofinalmjvtcpl.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -40,6 +42,12 @@ public class Cadastro {
 	private Escolaridade escolaridade;
 	
 	@Embedded
+	@AttributeOverrides({
+		@AttributeOverride( name = "logradouro", column = @Column(name = "endereco_logradouro")),
+		@AttributeOverride( name = "numero", column = @Column(name = "endereco_numero")),
+		@AttributeOverride( name = "bairro", column = @Column(name = "endereco_bairro")),
+		@AttributeOverride( name = "cidade", column = @Column(name = "endereco_cidade"))
+	})
 	private Endereco endereco;
 
 	public Integer getId() {
