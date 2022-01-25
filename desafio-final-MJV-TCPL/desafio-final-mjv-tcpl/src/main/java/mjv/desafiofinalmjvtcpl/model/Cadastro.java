@@ -43,10 +43,10 @@ public class Cadastro {
 	
 	@Embedded
 	@AttributeOverrides({
-		@AttributeOverride( name = "logradouro", column = @Column(name = "endereco_logradouro")),
-		@AttributeOverride( name = "numero", column = @Column(name = "endereco_numero")),
-		@AttributeOverride( name = "bairro", column = @Column(name = "endereco_bairro")),
-		@AttributeOverride( name = "cidade", column = @Column(name = "endereco_cidade"))
+		@AttributeOverride( name = "logradouro", column = @Column(name = "logradouro")),
+		@AttributeOverride( name = "numero", column = @Column(name = "numero")),
+		@AttributeOverride( name = "bairro", column = @Column(name = "bairro")),
+		@AttributeOverride( name = "cidade", column = @Column(name = "cidade"))
 	})
 	private Endereco endereco;
 
