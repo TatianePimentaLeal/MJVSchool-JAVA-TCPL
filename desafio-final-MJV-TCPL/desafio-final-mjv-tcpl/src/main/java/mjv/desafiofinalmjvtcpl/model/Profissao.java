@@ -1,6 +1,5 @@
 package mjv.desafiofinalmjvtcpl.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +14,7 @@ public class Profissao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable = false, length = 50)
-	private String nomeProfissao;
+	private String profissao;
 
 	public Integer getId() {
 		return id;
@@ -26,13 +24,27 @@ public class Profissao {
 		this.id = id;
 	}
 
-	public String getNomeProfissao() {
-		return nomeProfissao;
+	public String getProfissao() {
+		return profissao;
 	}
 
-	public void setNomeProfissao(String nomeProfissao) {
-		this.nomeProfissao = nomeProfissao;
+	public void setProfissao(String profissao) {
+		this.profissao = profissao;
 	}
-	
+
+	public Profissao(Integer id, String profissao) {
+		this.id = id;
+		this.profissao = profissao;
+	}
+
+	public Profissao() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "Profissao [id=" + id + ", profissao=" + profissao + "]";
+	}
+
 	
 }

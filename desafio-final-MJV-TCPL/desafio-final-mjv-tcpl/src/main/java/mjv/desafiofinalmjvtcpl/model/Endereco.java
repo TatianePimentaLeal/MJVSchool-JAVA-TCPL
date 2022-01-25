@@ -9,13 +9,10 @@ public class Endereco {
 	@Column(length = 50)
 	private String logradouro;
 	
-	@Column(length = 10)
 	private String numero;
 	
-	@Column(length = 50)
 	private String bairro;
 	
-	@Column(length = 50)
 	private String cidade;
 
 	public String getLogradouro() {
@@ -49,6 +46,22 @@ public class Endereco {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
+	public Endereco(String logradouro, String numero, String bairro, String cidade) {
+		this.logradouro = logradouro;
+		this.numero = numero;
+		this.bairro = bairro;
+		this.cidade = cidade;
+	}
 	
+	public Endereco() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade
+				+ "]";
+	}
 	
 }

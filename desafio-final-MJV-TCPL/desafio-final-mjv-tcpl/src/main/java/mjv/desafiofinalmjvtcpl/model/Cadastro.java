@@ -5,14 +5,14 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "tab_cadastro")
@@ -24,36 +24,18 @@ public class Cadastro {
 	@Column(nullable = false, length = 50)
 	private String nome;
 	
-	//@Column
-	//private String email;
-	
-	@Column(name = "cpf_cnpj", nullable = false, length = 20)
+	@Column(nullable = false, length = 20)
 	private String cpf;
 		
-	@Column(name = "data_nasc", length = 15)
+	@JsonFormat(pattern= "dd-MM-yyyy")
 	private LocalDate dataNascimento;
 	
-	@ManyToOne()
-	@JoinColumn(name = "telefone_id")
-	private Telefone telefone;
+	@JoinColumn
+	private String telefone;
 	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "tel_tipo", columnDefinition = "char(8)")
-	private TelefoneTipo telefoneTipo;
-	//MANTIDO O STRING DEVIDO AO ORDINAL NAO PERMITIR MUDANÇA DA ORDEM DOS ENUMS, NEM DEIXA INSERIR ENUMS NO MEIO DA LISTA SE NECESSARIO
-	
-	@ManyToOne()
-	@JoinColumn(name = "profissao_id")
-	private Profissao profissao;
-	
-	@Embedded
-	private FaixaSalarial faixaSalarial;
-	
-	@Enumerated(EnumType.STRING)
-	@Column(name = "gênero", columnDefinition = "char(1)")
-	private Sexo sexo;
-	//MANTIDO O STRING DEVIDO AO ORDINAL NAO PERMITIR MUDANÇA DA ORDEM DOS ENUMS, NEM DEIXA INSERIR ENUMS NO MEIO DA LISTA SE NECESSARIO
-	
+	@JoinColumn
+	private String profissao;
+		
 	@Enumerated
 	private Escolaridade escolaridade;
 	
@@ -76,14 +58,6 @@ public class Cadastro {
 		this.nome = nome;
 	}
 
-	//public String getEmail() {
-	//return email;
-	//}
-
-	//public void setEmail(String email) {
-	//this.email = email;
-	//}
-
 	public String getCpf() {
 		return cpf;
 	}
@@ -100,44 +74,20 @@ public class Cadastro {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public Telefone getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
 
-	public void setTelefone(Telefone telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 
-	public TelefoneTipo getTelefoneTipo() {
-		return telefoneTipo;
-	}
-
-	public void setTelefoneTipo(TelefoneTipo telefoneTipo) {
-		this.telefoneTipo = telefoneTipo;
-	}
-
-	public Profissao getProfissao() {
+	public String getProfissao() {
 		return profissao;
 	}
 
-	public void setProfissao(Profissao profissao) {
+	public void setProfissao(String profissao) {
 		this.profissao = profissao;
-	}
-
-	public FaixaSalarial getFaixaSalarial() {
-		return faixaSalarial;
-	}
-
-	public void setFaixaSalarial(FaixaSalarial faixaSalarial) {
-		this.faixaSalarial = faixaSalarial;
-	}
-
-	public Sexo getSexo() {
-		return sexo;
-	}
-
-	public void setSexo(Sexo sexo) {
-		this.sexo = sexo;
 	}
 
 	public Escolaridade getEscolaridade() {
@@ -156,30 +106,29 @@ public class Cadastro {
 		this.endereco = endereco;
 	}
 
-	public Cadastro(Integer id, String nome, String cpf, LocalDate dataNascimento, Telefone telefone,
-			TelefoneTipo telefoneTipo, Profissao profissao, FaixaSalarial faixaSalarial, Sexo sexo,
+	public Cadastro(Integer id, String nome, String cpf, LocalDate dataNascimento, String telefone, String profissao,
 			Escolaridade escolaridade, Endereco endereco) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
 		this.telefone = telefone;
-		this.telefoneTipo = telefoneTipo;
 		this.profissao = profissao;
-		this.faixaSalarial = faixaSalarial;
-		this.sexo = sexo;
 		this.escolaridade = escolaridade;
 		this.endereco = endereco;
 	}
-	
+
 	public Cadastro() {
-		
+
 	}
 
-	public Cadastro(Object id2, String nome2, String cpf2, Object dataNascimento2, int i, Object telefoneTipo2,
-			String string, int j, Object sexo2, Object escolaridade2, Object endereco2) {
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "Cadastro [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
+				+ ", telefone=" + telefone + ", profissao=" + profissao + ", escolaridade=" + escolaridade
+				+ ", endereco=" + endereco + "]";
 	}
+	
+	
 }
 

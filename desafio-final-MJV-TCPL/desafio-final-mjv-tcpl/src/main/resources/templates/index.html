@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:th="http://www.thymeleaf.org">
-    <head>
+<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -41,7 +41,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Bem-vindo ao Projeto Final MJV</div>
-                <div class="masthead-heading text-uppercase">"PRÔ THAIS INITIATIVE"</div>
+                <div class="masthead-heading text-uppercase">"INICIATIVA PRÔ THAIS"</div>
                 <a class="btn btn-primary btn-xl text-uppercase" href="#services">Saiba Mais</a>
             </div>
         </header>
@@ -251,23 +251,20 @@
                     <h3 class="section-subheading text-muted">Conheça quem já se juntou à nós.</h3>
                 </div>
                 <div class="row">
-                	<div th:each="c, itemStat : *{cadastros}">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
-                            <h4 th:text="${c.nome}">Nome</h4>
-                            <p th:text="${c.profissao}" class="text-muted">Profissao</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                            <h4>Nome</h4>
+                            <p class="text-muted">Profissao</p>
+                            <p class="text-muted">CPF</p>
+                            <p class="text-muted">Data de Nascimento</p>
+                            <p class="text-muted">Profissão</p>
+                            <p class="text-muted">Escolaridade</p>
+                            <p class="text-muted">Endereço</p>
+                            
                         </div>
                     </div>
-                	</div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
-            </div>
         </section>
         <!-- Clients-->
         <div class="py-5">
@@ -302,65 +299,45 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" action="/grava" method="POST" th:object="${cadastro} data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <!-- Name input-->
-                                <input class="form-control" id="name" name="nome" type="text" placeholder="Seu nome *" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <input class="form-control" id="name" type="text" placeholder="Nome completo" data-sb-validations="required" />
                             </div>
-                            
                             <div class="form-group">
                                 <!-- CPF number input-->
-                                <input class="form-control" id="cpf" name="cpf" type="text" min="11" placeholder="Seu CPF (XXX.XXX.XXX-XX)" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="cpf:required">An CPF is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="cpf:cpf">CPF is not valid.</div>
+                                <input class="form-control" id="cpf" type="text" min="11" placeholder="CPF" data-sb-validations="required,email" />
                             </div>
                             <div class="form-group">
                                 <!-- Birthday input-->
-                                <input class="form-control" id="birthday" name="dataNascimento" type="date" placeholder="Sua data de aniversário *" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="date:required">An birthday is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="date:date"> is not valid.</div>
+                                <input class="form-control" id="birthday" type="date" placeholder="Data de Nascimento" data-sb-validations="required,email" />
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone input-->
-                                <input class="form-control" id="phone" name="telefone" type="tel" placeholder="Seu telefone de contato (DDD XXXXX-XXXX)" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                <input class="form-control" id="phone" type="tel" placeholder="Telefone de contato" data-sb-validations="required" />
+
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group form-group-textarea mb-md-0">
                                 <div class="form-group">
                                     <!-- Profession input-->
-                                    <input class="form-control" id="profession" name="profissao" type="text" placeholder="Sua profissao *" data-sb-validations="required" />
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A profession number is required.</div>
-                                </div>
-
-                                <div class="form-group">
-                                    <!-- Salary input-->
-                                    <input class="form-control" id="salary" name="faixaSalarial" type="text" placeholder="Remuneração pretendida *" data-sb-validations="required" />
-                                    <div class="invalid-feedback" data-sb-feedback="salary:required">A profession number is required.</div>
-                                </div>
-                                <div class="form-group">
-                                    <!-- Gender input-->
-                                    <input class="form-control" id="gender" name="sexo" type="text" placeholder="Seu gênero *" data-sb-validations="required" />
-                                    <div class="invalid-feedback" data-sb-feedback="gender:required">A gender number is required.</div>
+                                    <input class="form-control" id="profession" type="text" placeholder="Profissão" data-sb-validations="required" />
                                 </div>
                                 <div class="form-group">
                                     <!-- Graduation input-->
-                                    <input class="form-control" id="graduation" name="escolaridade" type="text" placeholder="Sua escolaridade *" data-sb-validations="required" />
-                                    <div class="invalid-feedback" data-sb-feedback="graduation:required">A graduation number is required.</div>
+                                    <input class="form-control" id="graduation" type="text" placeholder="Escolaridade" data-sb-validations="required" />
                                 </div>
                                 <div class="form-group">
                                     <!-- Address input-->
-                                    <input class="form-control" id="address" name="endereco" type="text" placeholder="Sua endereço *" data-sb-validations="required" />
-                                    <div class="invalid-feedback" data-sb-feedback="address:required">An address number is required.</div>
+                                    <input class="form-control" id="address" type="text" placeholder="Endereço completo" data-sb-validations="required" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Submit Button-->
                     <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">CADASTRAR</button></div>
                 </form>

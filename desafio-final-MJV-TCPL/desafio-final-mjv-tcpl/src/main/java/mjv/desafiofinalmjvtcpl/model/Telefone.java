@@ -1,6 +1,5 @@
 package mjv.desafiofinalmjvtcpl.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,11 +14,7 @@ public class Telefone {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name = "DDD", nullable = false, length = 5)
-	private Integer ddd;
-	
-	@Column(name = "numero_tel", nullable = false, length = 12)
-	private Integer numeroTel;
+	private String telefone;
 
 	public Integer getId() {
 		return id;
@@ -29,21 +24,29 @@ public class Telefone {
 		this.id = id;
 	}
 
-	public Integer getDdd() {
-		return ddd;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setDdd(Integer ddd) {
-		this.ddd = ddd;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
-	public Integer getNumeroTel() {
-		return numeroTel;
+	public Telefone(Integer id, String telefone) {
+		this.id = id;
+		this.telefone = telefone;
+	}
+	
+	public Telefone() {
+
 	}
 
-	public void setNumeroTel(Integer numeroTel) {
-		this.numeroTel = numeroTel;
+	@Override
+	public String toString() {
+		return "Telefone [id=" + id + ", telefone=" + telefone + "]";
 	}
+
+
 	
 	
 }
