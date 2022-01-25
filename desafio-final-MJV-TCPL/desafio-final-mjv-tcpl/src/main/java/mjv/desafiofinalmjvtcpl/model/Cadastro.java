@@ -46,7 +46,7 @@ public class Cadastro {
 		@AttributeOverride( name = "cidade", column = @Column(name = "cidade"))
 	})
 	private Endereco endereco;
-
+	
 	public Integer getId() {
 		return id;
 	}

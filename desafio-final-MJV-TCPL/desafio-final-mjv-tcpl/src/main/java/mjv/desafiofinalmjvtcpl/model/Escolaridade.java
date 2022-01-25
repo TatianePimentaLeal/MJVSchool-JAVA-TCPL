@@ -10,4 +10,6 @@ public enum Escolaridade {
 	SUPERIOR,
 	MESTRADO,
 	DOUTORADO
+
+	
 }
