@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import mjv.desafiofinalmjvtcpl.model.Cadastro;
+import mjv.desafiofinalmjvtcpl.model.Escolaridade;
 import mjv.desafiofinalmjvtcpl.repository.CadastroRepository;
 
 @Controller

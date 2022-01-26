@@ -260,7 +260,7 @@
                             <p class="text-muted" th:text = "${c.cpf}">CPF</p>
                             <p class="text-muted" th:text = "${c.dataNascimento}">Data de Nascimento</p>
                             <p class="text-muted" th:text = "${c.telefone}">Telefone</p>
-                            <!-- <p class="text-muted" th:text = "${c.escolaridade}">Escolaridade</p>-->
+                            <p class="text-muted" th:text = "${c.escolaridade}">Escolaridade</p>
                             <!-- <p class="text-muted">Endereço</p>-->
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
@@ -320,7 +320,7 @@
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone input-->
-                                <input class="form-control" id="phone"type="tel" name="telefone" placeholder="Telefone de contato (DDD XXXXX-XXXX)" data-sb-validations="required" />
+                                <input class="form-control" id="phone"type="tel" name="telefone" placeholder="Telefone de contato (DDD) XXXXX-XXXX" data-sb-validations="required" />
 
                             </div>
                         </div>
@@ -332,7 +332,18 @@
                                 </div>
                                 <div class="form-group">
                                     <!-- Graduation input-->
-                                    <input class="form-control" id="graduation" name="escolaridade" type="text" placeholder="Escolaridade" data-sb-validations="required" />
+                                    <input class="form-control" id="graduation" name="escolaridade" type="text" list="escolaridade" placeholder="Escolaridade" data-sb-validations="required" />
+	                                <datalist id="escolaridade">
+										<option value="ANALFABETO">
+										<option value="LE-ESCREVE">
+										<option value="FUNDAMENTAL INCOMPLETO">
+										<option value="ENSINO FUNDAMENTA"L>
+										<option value="ENSINO MEDIO INCOMPLETO">
+										<option value="ENSINO MEDIO COMPLETO">
+										<option value="SUPERIOR">
+										<option value="MESTRADO">
+										<option value="DOUTORADO"> 
+									</datalist>
                                 </div>
                                 <div class="form-group">
                                     <!-- Address input-->

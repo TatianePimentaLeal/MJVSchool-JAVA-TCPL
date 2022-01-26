@@ -9,7 +9,7 @@ public enum Escolaridade {
 	ENSINO_MEDIO_COMPLETO,
 	SUPERIOR,
 	MESTRADO,
-	DOUTORADO
-
+	DOUTORADO; 
 	
+
 }
