@@ -28,7 +28,7 @@ public class Cadastro {
 	@Column(nullable = false, length = 20)
 	private String cpf;
 		
-	@DateTimeFormat(iso= DateTimeFormat.ISO.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataNascimento;
 	
 	private String telefone;

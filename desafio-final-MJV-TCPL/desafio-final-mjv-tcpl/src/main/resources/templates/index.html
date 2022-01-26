@@ -258,7 +258,7 @@
                             <h4 th:text = "${c.nome}">Nome</h4>
                             <p class="text-muted" th:text = "${c.profissao}">Profissão</p>
                             <p class="text-muted" th:text = "${c.cpf}">CPF</p>
-                            <!-- <p class="text-muted">Data de Nascimento</p>-->
+                            <p class="text-muted" th:text = "${c.dataNascimento}">Data de Nascimento</p>
                             <p class="text-muted" th:text = "${c.telefone}">Telefone</p>
                             <!-- <p class="text-muted" th:text = "${c.escolaridade}">Escolaridade</p>-->
                             <!-- <p class="text-muted">Endereço</p>-->
@@ -316,7 +316,7 @@
                             </div>
                             <div class="form-group">
                                 <!-- Birthday input-->
-                                <input class="form-control" id="birthday" placeholder="Data de Nascimento" data-sb-validations="required" />
+                                <input class="form-control" id="birthday" type="date" name="dataNascimento" placeholder="Data de Nascimento" data-sb-validations="required" />
                             </div>
                             <div class="form-group mb-md-0">
                                 <!-- Phone input-->
