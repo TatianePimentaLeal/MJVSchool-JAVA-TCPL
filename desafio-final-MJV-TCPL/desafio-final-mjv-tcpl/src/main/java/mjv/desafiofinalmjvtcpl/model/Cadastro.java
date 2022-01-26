@@ -139,8 +139,6 @@ public class Cadastro {
 	public Cadastro() {
 
 	}
-
-
 	
 	
 }
