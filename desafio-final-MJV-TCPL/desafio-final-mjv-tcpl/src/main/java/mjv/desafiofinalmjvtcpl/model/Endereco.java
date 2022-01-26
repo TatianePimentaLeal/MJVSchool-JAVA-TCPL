@@ -3,6 +3,9 @@ package mjv.desafiofinalmjvtcpl.model;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Embeddable
 public class Endereco {
 	
@@ -63,5 +66,6 @@ public class Endereco {
 		return "Endereco [logradouro=" + logradouro + ", numero=" + numero + ", bairro=" + bairro + ", cidade=" + cidade
 				+ "]";
 	}
+
 	
 }
