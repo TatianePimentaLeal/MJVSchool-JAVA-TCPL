@@ -11,5 +11,4 @@ public enum Escolaridade {
 	MESTRADO,
 	DOUTORADO; 
 	
-
 }

@@ -1,18 +1,11 @@
 package mjv.desafiofinalmjvtcpl.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import mjv.desafiofinalmjvtcpl.model.Cadastro;
-//import mjv.desafiofinalmjvtcpl.model.Cadastro;
-//import mjv.desafiofinalmjvtcpl.model.Endereco;
-//import mjv.desafiofinalmjvtcpl.model.Escolaridade;
 import mjv.desafiofinalmjvtcpl.repository.CadastroRepository;
 
 @Component
@@ -30,6 +23,7 @@ public class CadastroService implements CommandLineRunner {
 		//membro1.setTelefone("(21) 9141-9999");
 		//membro1.setProfissao("TECH LEAD");
 		//membro1.setEscolaridade(Escolaridade.SUPERIOR);
+		//membro1.setEmail("taty@gmail.com");
 		//membro1.setEndereco(new Endereco("RUA TREZE", "10", "LARANJEIRAS", "RIO DE JANEIRO"));
 		
 		//repository.save(membro1);

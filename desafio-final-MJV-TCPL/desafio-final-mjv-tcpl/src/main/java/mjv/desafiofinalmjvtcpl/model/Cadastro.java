@@ -39,6 +39,8 @@ public class Cadastro {
 	@Enumerated
 	private Escolaridade escolaridade;
 	
+	private String email;
+	
 	@Embedded
 	@AttributeOverrides({
 		@AttributeOverride( name = "logradouro", column = @Column(name = "logradouro")),
@@ -103,6 +105,14 @@ public class Cadastro {
 	public void setEscolaridade(Escolaridade escolaridade) {
 		this.escolaridade = escolaridade;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	public Endereco getEndereco() {
 		return endereco;
@@ -113,7 +123,8 @@ public class Cadastro {
 	}
 
 	public Cadastro(Integer id, String nome, String cpf, LocalDate dataNascimento, String telefone, String profissao,
-			Escolaridade escolaridade, Endereco endereco) {
+			Escolaridade escolaridade, String email, Endereco endereco) {
+		super();
 		this.id = id;
 		this.nome = nome;
 		this.cpf = cpf;
@@ -121,6 +132,7 @@ public class Cadastro {
 		this.telefone = telefone;
 		this.profissao = profissao;
 		this.escolaridade = escolaridade;
+		this.email = email;
 		this.endereco = endereco;
 	}
 
@@ -128,12 +140,7 @@ public class Cadastro {
 
 	}
 
-	@Override
-	public String toString() {
-		return "Cadastro [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
-				+ ", telefone=" + telefone + ", profissao=" + profissao + ", escolaridade=" + escolaridade
-				+ ", endereco=" + endereco + "]";
-	}
+
 	
 	
 }

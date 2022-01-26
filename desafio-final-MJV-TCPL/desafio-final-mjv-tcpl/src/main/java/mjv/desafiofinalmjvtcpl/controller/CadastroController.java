@@ -2,12 +2,15 @@ package mjv.desafiofinalmjvtcpl.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import mjv.desafiofinalmjvtcpl.model.Cadastro;
+import mjv.desafiofinalmjvtcpl.model.Endereco;
 import mjv.desafiofinalmjvtcpl.model.Escolaridade;
 import mjv.desafiofinalmjvtcpl.repository.CadastroRepository;
 
@@ -29,7 +32,7 @@ public class CadastroController {
 	public ModelAndView home() {
 		return index();
 	}
-	
+		
 	@PostMapping("/grava")
 	public ModelAndView salvar(@Validated Cadastro cadastro) {
 		repository.save(cadastro);
