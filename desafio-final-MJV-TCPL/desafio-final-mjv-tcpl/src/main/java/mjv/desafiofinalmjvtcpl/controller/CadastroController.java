@@ -32,7 +32,7 @@ public class CadastroController {
 	public ModelAndView home() {
 		return index();
 	}
-		
+			
 	@PostMapping("/grava")
 	public ModelAndView salvar(@Validated Cadastro cadastro) {
 		repository.save(cadastro);
