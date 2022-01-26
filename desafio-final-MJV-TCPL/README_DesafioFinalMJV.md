@@ -39,18 +39,24 @@ Autora/Author
 O desafio proposto foi baseado nas aulas da School de Java da MJV. O projeto final do desafio consistia na criação de uma conexão entre uma página web com template de Front-end fornecido pelo professor com o banco de dados criado via DBeaver via SpringBoot criando a estrutrura informada na figura 1 atrelada à página web.
 
 
-
+![Image 1](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/sandbox/desafio-final-MJV-TCPL/project-images-for-readme/fig1.diagrama_de_classes_modelo.jpeg)
 Fig 1. Diagrama de classes para criação dos atributos do objeto.
+<br/><br/>
+
 
 
 
 Para a criação do arquivo *core* do projeto, utilizado o *Spring Initializr* com as *dependencies* “Spring Web” e “MySQL Driver” (Fig. 2).
 
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/sandbox/desafio-final-MJV-TCPL/project-images-for-readme/fig2.Spring%20Initializr.png)
 Fig 2. Tela da criação do projeto via Spring Initializr
+<br/><br/>
 
 
+![](https://github.com/TatianePimentaLeal/MJVSchool-JAVA-TCPL/blob/sandbox/desafio-final-MJV-TCPL/project-images-for-readme/fig3.FluxoSpring.png)
 
 Fig 3. Fluxo Spring MVC
+<br/><br/>
 
 Na criação dos models, me deparei com o erro: “Failed to initialize JPA EntityManagerFactory: component property not found: id”, onde, conforme pesquisa , verifiquei que ocorrera devido a  erro na construção da classe “Telefone”, que inclui como *embeddable* e atribui ID, o que é irregular. Mudei na classe “Telefone” e na classe “Cadastro” (https://stackoverflow.com/questions/39040315/hibernate-embeddables-component-property-not-found).
 
