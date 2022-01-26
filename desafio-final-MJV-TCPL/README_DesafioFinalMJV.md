@@ -2,17 +2,17 @@
 
 #### Dados de autoria #### 
 
-Autora/Author - Tatiane Pimenta Leal
+Autora/Author
 
-LinkedIn - incluir link
+[Tatiane Pimenta Leal](github.com/TatianePimentaLeal)
 
-Hashnode - incluir link
+[LinkedIn](https://www.linkedin.com/in/tatianecampospimentaleal/) 
 
 
 
 #### Orientação do projeto ####
 
-Gleyson Sampaio (colocarl link do LinkedIn do prof.)
+[Gleyson Sampaio](https://github.com/glysns) 
 
 
 
