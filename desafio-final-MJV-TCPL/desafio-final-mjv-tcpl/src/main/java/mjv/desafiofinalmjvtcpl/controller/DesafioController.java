@@ -16,10 +16,11 @@ import mjv.desafiofinalmjvtcpl.repository.CadastroRepository;
 public class DesafioController {
 	@Autowired
 	private CadastroRepository repository;
-	@GetMapping("/")
+	
+	@GetMapping()
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("index");
-		mv.addObject("cadastros",repository.findAll());
+		mv.addObject("cadastros", repository.findAll());
 		return mv;
 	}
 	
